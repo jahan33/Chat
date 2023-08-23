@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.msg-receive-container {
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.pull-left {
+  float: left;
+}
+
+.send-btn {
+  margin-top: 10px;
+  margin-left: 5px;
+}

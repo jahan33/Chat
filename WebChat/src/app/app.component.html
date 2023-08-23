@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1>Chat</h1>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Send Message</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="col-12">
+          <form (ngSubmit)="sendMessage()" [formGroup]="chatForm">
+            <mat-form-field class="col-md-6 pull-left">
+              <mat-label>Message</mat-label>
+              <input matInput formControlName="message" placeholder="Message" />
+              <mat-error
+                *ngIf="this.chatForm.controls['message'].hasError('required')"
+                >Please enter the message</mat-error
+              >
+            </mat-form-field>
+            <div class="col-md-4 pull-left">
+              <button
+                class="send-btn"
+                mat-raised-button
+                color="primary"
+                [disabled]="!chatForm.valid"
+              >
+                <mat-icon>send</mat-icon>&nbsp;Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h2>Received Messages</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="col-md-12">
+          <div
+            class="msg-receive-container"
+            *ngIf="websocketService.receivedMessage.length > 0; else noMessage"
+            [innerHtml]="websocketService.receivedMessage"
+          ></div>
+        </div>
+        <ng-template #noMessage>
+          <small>No message received</small>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <router-outlet></router-outlet>
+</div>
