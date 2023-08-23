@@ -3,7 +3,7 @@
 Install Angular>= 16, Node>= 20,.Net 7
 
 ## Development server
-To run this application, open the webchat folder and  proceed with the these steps:
+To run this application, open the webchat folder and  proceed with the following steps:
 
 First run the websocket server 
 To start the websocket run the  the following commands
