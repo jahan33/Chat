@@ -15,7 +15,7 @@ then run the web application(WebChat) by using these commands
 `npm i`
 `ng server`
 
-Or run the `RunApp.bat` file
+Or run the `RunApp.bat` file (this will execute the WebSocket server and webchat application)
 
 Once the web application is running, open the Winform application(WinChat) and execute it.
 
